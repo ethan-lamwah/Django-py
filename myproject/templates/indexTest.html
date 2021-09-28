@@ -1,0 +1,14 @@
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'style.css' %}">
+
+<h1>
+    {{greeting}}! Welcome to {{name}}'s Django project
+</h1>
+<h3>Write your comment below</h3>
+<form method="POST" action="counter">
+    {% csrf_token %}
+    <textarea name="text" rows="10" cols="50"></textarea>
+    <br>
+    <input type="submit">
+</form>
