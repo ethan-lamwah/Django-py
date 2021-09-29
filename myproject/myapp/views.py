@@ -10,13 +10,30 @@ def index(request):
     
     feature1 = Feature()
     feature1.id = 0
-    feature1.name = 'Fast'
-    feature1.details = 'This is the details'
+    feature1.name = 'Feature 1'
+    feature1.details = 'This is the details of Feature 1'
+    
+    feature2 = Feature()
+    feature2.id = 1
+    feature2.name = 'Feature 2'
+    feature2.details = 'This is the details of Feature 2'
+    
+    feature3 = Feature()
+    feature3.id = 2
+    feature3.name = 'Feature 3'
+    feature3.details = 'This is the details of Feature 3'
+    
+    feature4 = Feature()
+    feature4.id = 3
+    feature4.name = 'Feature 4'
+    feature4.details = 'This is the details of Feature 4'
+    
+    features = [feature1, feature2, feature3, feature4]
     
     context = {
         'greeting' : greeting,
         'name' : 'Ethan',
-        'feature1' : feature1
+        'features' : features
     }
     return render(request, 'index.html', context)
     # return HttpResponse('<h1>Hello world!</h1>') 
