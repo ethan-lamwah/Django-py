@@ -101,11 +101,11 @@
             <div class="icon"><i class="ri-stack-line"></i></div>
             <h4 class="title"><a href="">{{feature.name}}</a></h4>
             <p class="description">{{feature.details}}.</p>
-            {% if feature.is_true %}
+            {% comment %} {% if feature.is_true %}
             <p>This feature is true</p>
             {% else %}
             <p>This feature is false</p>
-            {% endif %}
+            {% endif %} {% endcomment %}
           </div>
         </div>
         {% endfor %}

@@ -4,6 +4,7 @@ from django.db import models
 class Feature(models.Model):
     name: models.CharField(max_length=100)
     details: models.CharField(max_length=500)
+    pub_date: models.DateTimeField('date published')
 # class Feature:
 #     id: int
 #     name: str
