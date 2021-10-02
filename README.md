@@ -32,7 +32,7 @@ python manage.py runserver
 
 Once the server is running, you can view the site by navigating to the following URL on the local web browser: http://127.0.0.1:8000/
 
-### Make migrations for your app
+### Maniipulation of Database
 Create you Model first
 ```python
 class Feature(models.Model):
@@ -52,7 +52,7 @@ INSTALLED_APPS = [
 ]
 ```
 
-Run command: `python manage.py makemigrations`
+To make migrations, run command `python manage.py makemigrations`
 ```
 (venv) C:\Users\myproject>python manage.py makemigrations
 Migrations for 'myapp':
@@ -60,21 +60,27 @@ Migrations for 'myapp':
     - Create model Feature
 ```
 
-Then run : `python manage.py migrate`
+To apply migrations, then run `python manage.py migrate`
 ```
 (venv) C:\Users\myproject>python manage.py migrate
 Operations to perform:
   Apply all migrations: admin, auth, contenttypes, myapp, sessions
 Running migrations:
-  Applying contenttypes.0001_initial... OK
+  ...
   Applying myapp.0001_initial... OK
   ...
 ```
 
-### Admin page
-- create an user using `python manage.py createsuperuser`
+Register your models in `myapp/admin.py`, then the new model can be manipulated in admin panel
+```python
+from .models import Feature # Import the model you just created
+# Register you models here
+admin.site.register(Feature) 
+```
 
-http://127.0.0.1:8000/admin
+### Admin page
+- URL:  http://127.0.0.1:8000/admin
+- create an user using `python manage.py createsuperuser`
 
 <!-- URL below -->
 [1]:https://virtualenvwrapper.readthedocs.io/en/latest/command_ref.html#managing-environments
