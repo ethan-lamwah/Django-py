@@ -32,7 +32,7 @@ python manage.py runserver
 
 Once the server is running, you can view the site by navigating to the following URL on the local web browser: http://127.0.0.1:8000/
 
-### Maniipulation of Database
+### Manipulation of Database
 Create you Model first
 ```python
 class Feature(models.Model):
