@@ -82,5 +82,18 @@ admin.site.register(Feature)
 - URL:  http://127.0.0.1:8000/admin
 - create an user using `python manage.py createsuperuser`
 
+### User Registration In Django
+- URL: http://127.0.0.1:8000/register
+- `POST` method
+- Check if specific input already exists in DB: 
+    ```python
+    if User.objects.filter(email=email).exists():
+    ````
+- Create User using Django authentication system and `User` model:
+    ```python
+    user = User.objects.create_user(username=username, password=password) 
+    user.save()
+    ```
+
 <!-- URL below -->
 [1]:https://virtualenvwrapper.readthedocs.io/en/latest/command_ref.html#managing-environments
