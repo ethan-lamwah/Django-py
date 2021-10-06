@@ -95,5 +95,19 @@ admin.site.register(Feature)
     user.save()
     ```
 
+### User Login And Logout in Django
+- URL: http://127.0.0.1:8000/login
+```python
+from django.contrib.auth.models import auth
+# Authentication
+user = auth.authenticate(username=username, password=password)
+# Login request
+auth.login(request, user)
+# Logout request
+auth.logout(request)
+# Check authentication
+user.is_authenticated
+```
+
 <!-- URL below -->
 [1]:https://virtualenvwrapper.readthedocs.io/en/latest/command_ref.html#managing-environments
