@@ -21,9 +21,11 @@ def index(request):
     # return HttpResponse('<h1>Hello world!</h1>') 
     
 def counter(request): 
-    text = request.POST['text']
-    amount_of_words = len(text.split())
-    return render(request, 'counter.html', {'amount' : amount_of_words})
+    # text = request.POST['text']
+    # amount_of_words = len(text.split())
+    # return render(request, 'counter.html', {'amount' : amount_of_words})
+    posts = [1, 2, 3, 4, 5, 'Ethan', 'Klaus', 'Elijah']
+    return render(request, 'counter.html', {'posts' : posts})
 
 def register(request):
     if request.method == 'POST':
@@ -69,3 +71,6 @@ def login(request):
 def logout(request):
     auth.logout(request)
     return redirect('/')
+
+def post(request, pk):
+    return render(request, 'post.html', {'pk': pk})
