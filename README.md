@@ -109,5 +109,17 @@ auth.logout(request)
 user.is_authenticated
 ```
 
+### Dynamic URL Routing
+```python
+# myapp/urls.py
+urlpatterns = [
+     path('post/<str:pk>', views.post, name='post')
+]
+
+# myapp/views.py
+def post(request, pk):
+    return render(request, 'post.html', {'pk': pk})
+```
+
 <!-- URL below -->
 [1]:https://virtualenvwrapper.readthedocs.io/en/latest/command_ref.html#managing-environments
