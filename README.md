@@ -121,5 +121,18 @@ def post(request, pk):
     return render(request, 'post.html', {'pk': pk})
 ```
 
+## Postgresql Setup
+1. install library
+```
+pip install psycopg2
+pip install Pillow
+```
+2. Set your Database credentials in `myproject/settings.py`
+3. Apply migrations
+```
+python manage.py makemigrations
+python manage.py migrate
+```
+
 <!-- URL below -->
 [1]:https://virtualenvwrapper.readthedocs.io/en/latest/command_ref.html#managing-environments
